@@ -2,87 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Mountain Journey Trading App Design System 
+All colors are HSL for perfect theming */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Mountain dawn theme */
+    --background: 220 45% 98%;
+    --foreground: 215 25% 15%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Mountain peak - Primary colors */
+    --primary: 215 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 215 85% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Valley mist - Secondary colors */
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 215 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Morning fog - Muted colors */
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sky blue - Accent colors */
+    --accent: 200 85% 85%;
+    --accent-foreground: 215 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Danger/Loss colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success/Profit colors */
+    --success: 140 65% 45%;
+    --success-foreground: 0 0% 100%;
 
+    /* Borders and inputs */
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 215 85% 35%;
+
+    /* Mountain gradients */
+    --gradient-mountain: linear-gradient(135deg, hsl(215 85% 35%), hsl(200 75% 50%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 85% 85%), hsl(220 45% 98%));
+    --gradient-balloon: linear-gradient(135deg, hsl(0 75% 55%), hsl(15 85% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(140 65% 45%), hsl(160 55% 55%));
+
+    /* Shadows and glows */
+    --shadow-mountain: 0 20px 40px -10px hsl(215 85% 35% / 0.2);
+    --shadow-balloon: 0 8px 25px -8px hsl(0 75% 55% / 0.3);
+    --shadow-card: 0 4px 15px -3px hsl(215 25% 15% / 0.1);
+    --glow-success: 0 0 30px hsl(140 65% 45% / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Radius and spacing */
     --radius: 0.5rem;
 
+    /* Sidebar colors (keeping existing values) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Evening mountain theme */
+    --background: 215 30% 8%;
+    --foreground: 210 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 12%;
+    --card-foreground: 210 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Mountain peak - Primary colors (darker) */
+    --primary: 215 85% 55%;
+    --primary-foreground: 215 30% 8%;
+    --primary-glow: 215 85% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Valley mist - Secondary colors (darker) */
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 30% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Evening fog - Muted colors (darker) */
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Night sky - Accent colors (darker) */
+    --accent: 215 25% 20%;
+    --accent-foreground: 210 30% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Enhanced danger/success for dark theme */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 30% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --success: 140 65% 55%;
+    --success-foreground: 215 30% 8%;
+
+    /* Dark borders and inputs */
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 215 85% 55%;
+
+    /* Dark theme gradients */
+    --gradient-mountain: linear-gradient(135deg, hsl(215 85% 35%), hsl(200 75% 40%));
+    --gradient-sky: linear-gradient(180deg, hsl(215 30% 8%), hsl(200 35% 15%));
+    --gradient-balloon: linear-gradient(135deg, hsl(0 75% 55%), hsl(15 85% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(140 65% 45%), hsl(160 55% 55%));
+
+    /* Dark theme shadows */
+    --shadow-mountain: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-balloon: 0 8px 25px -8px hsl(0 75% 55% / 0.4);
+    --shadow-card: 0 4px 15px -3px hsl(0 0% 0% / 0.3);
+    --glow-success: 0 0 30px hsl(140 65% 55% / 0.4);
+
+    /* Dark sidebar */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -35,6 +36,10 @@ export default {
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -84,11 +89,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'balloon-float': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(-2deg)' },
+					'50%': { transform: 'translateY(-8px) rotate(2deg)' }
+				},
+				'mountain-glow': {
+					'0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+					'50%': { transform: 'scale(1.05)', opacity: '1' }
+				},
+				'progress-fill': {
+					'0%': { width: '0%' },
+					'100%': { width: 'var(--progress-width)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'balloon-float': 'balloon-float 4s ease-in-out infinite',
+				'mountain-glow': 'mountain-glow 3s ease-in-out infinite',
+				'progress-fill': 'progress-fill 1.5s ease-out forwards'
+			},
+			backgroundImage: {
+				'gradient-mountain': 'var(--gradient-mountain)',
+				'gradient-sky': 'var(--gradient-sky)',
+				'gradient-balloon': 'var(--gradient-balloon)',
+				'gradient-success': 'var(--gradient-success)'
+			},
+			boxShadow: {
+				'mountain': 'var(--shadow-mountain)',
+				'balloon': 'var(--shadow-balloon)',
+				'card': 'var(--shadow-card)',
+				'success-glow': 'var(--glow-success)'
 			}
 		}
 	},
